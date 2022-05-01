@@ -1,0 +1,47 @@
+{
+    "actual_schedule":{
+        "monday":{
+            "13:00":"THU 201",
+            "13:55":"THU 201",
+            "15:10":"LIBRARY",
+            "16:05":"TEC 201"
+        },
+        "tuesday":{
+            "13:00":"TEC 201",
+            "13:55":"TCH 201",
+            "15:10":"TMA 201",
+            "16:05":"TMA 201"
+        },
+        "wednesday":{
+            "13:00":"TEC 201",
+            "13:55":"TCS 201",
+            "15:10":"LIBRARY",
+            "16:05":"PME"
+        },
+        "thursday":{
+            "09:00":"PEC 251",
+            "11:10":"PCS 251",
+            "13:55":"TCH 201",
+            "15:10":"TEV 201",
+            "16:05":"TCS 201"
+        },
+        "friday":{
+            "09:00":"PCS 251",
+            "11:10":"PME 251",  
+            "13:55":"TEV 201",
+            "15:10":"TCH 201",
+            "16:05":"TCS 201"
+        },
+        "saturday":{
+            "13:00":"ENGINEERING GRARPHICS AND DESIGN LAB",
+            "15:10":"TMA 201",
+            "16:05":"TMA 201"
+        }
+    },
+    "config":{
+        "token": "",
+        "webhook_url": "https://discord.com/api/webhooks/930359977850314753/sdasgwasghagasgasfqw2asfa2g",
+		"webhook_id" : 930359977850314753,
+        "embed_cotent" : "Hey have you took the class yet ?"
+    }
+}

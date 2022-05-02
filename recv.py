@@ -102,6 +102,7 @@ async def on_message(message):
         elif state == "Cancelled/Teacher Absent":
             responses["cancelled"].append(dic)
         dump(responses, open("responses.json", "w"), indent=4) 
+        await message.channel.send(content="Successfully logged your input", embed=embed)
     await bot.process_commands(message)
 
 bot.run(token)

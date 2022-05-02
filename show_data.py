@@ -30,7 +30,7 @@ def get_data():
         try:
             date_wise[date]["total"] += 1
         except KeyError: # first time seeing this class
-            date_wise[date] = {"total": 1, "taken": 1, "not_taken": 1, "cancelled": 0}
+            date_wise[date] = {"total": 1, "taken": 1, "not_taken": 0, "cancelled": 0}
         else:
             date_wise[date]["taken"] += 1
 

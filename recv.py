@@ -69,15 +69,15 @@ async def on_message(message):
         if str(reaction.emoji) == reactions[0]:
             print("Accepted")
             state = "Taken"
-            embed.set_color(0x00ff00)
+            embed.color = 0x00ff00
         elif str(reaction.emoji) == reactions[1]:
             print("Rejected")
             state = "Not Taken"
-            embed.set_color(0xff0000)
+            embed.color = 0xff0000
         else:
             print("Class Cancelled")
             state = "Cancelled/Teacher Absent"
-            embed.set_color(0xffff00)
+            embed.color = 0xffff00
         
         # extract webook info
         class_name = embed.title

@@ -3,6 +3,8 @@ from json import load
 from datetime import datetime
 from operator import ne
 from mplcal import MplCalendar
+from matplotlib import pyplot as plt
+
 
 def get_data():
     data = load(open('responses.json'))
@@ -112,5 +114,20 @@ def get_data():
         saving_name = f"{cale.month}-{cale.year}.png"
         cale.save(saving_name)
         file_names.append(saving_name)
-
+    
+    attended_class = {}
+    for clas in classes_names.keys():
+        attended_class[clas[:10]] = classes_names[clas]["taken"] + classes_names[clas]["cancelled"]
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])
+    ax.axis('equal')
+    ax.pie(list(attended_class.values()), 
+    shadow=True, 
+    startangle=90)
+    plt.legend(list(attended_class.keys()), loc="best")
+    plt.savefig("pie_graph.png")
+    file_names.append("pie_graph.png")
     return string, file_names
+
+get_data()
+

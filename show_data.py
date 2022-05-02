@@ -108,7 +108,6 @@ def get_data():
         ratio = (present/total)*100
         value = classes_names[key]
         string +=  key +  "\n"  + f"Percentage - {ratio}" + "\n\n"
-    string += "```"
     file_names = []
     for cale in calenders:
         saving_name = f"{cale.month}-{cale.year}.png"
@@ -116,17 +115,29 @@ def get_data():
         file_names.append(saving_name)
     
     attended_class = {}
+    overall = {"taken":0, "not_taken":0, "cancelled":0, "total":0}
     for clas in classes_names.keys():
         attended_class[clas[:10]] = classes_names[clas]["taken"] + classes_names[clas]["cancelled"]
+        overall["taken"] += classes_names[clas]["taken"]
+        overall["not_taken"] += classes_names[clas]["not_taken"]
+        overall["cancelled"] += classes_names[clas]["cancelled"]
+        overall["total"] += classes_names[clas]["total"]
+
     fig = plt.figure()
     ax = fig.add_axes([0,0,1,1])
     ax.axis('equal')
     ax.pie(list(attended_class.values()), 
+    autopct='%1.1f%%',
     shadow=True, 
     startangle=90)
     plt.legend(list(attended_class.keys()), loc="best")
     plt.savefig("pie_graph.png")
     file_names.append("pie_graph.png")
+    string += f"Total classes - {overall['total']}\n"
+    string += f" Taken Classes - {overall['taken']}\n"
+    string += f" Not Taken Classes - {overall['not_taken']}\n"
+    string += f" Cancelled Classes - {overall['cancelled']}\n"
+    string += "```"
     return string, file_names
 
 get_data()

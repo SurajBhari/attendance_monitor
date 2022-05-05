@@ -17,5 +17,5 @@ Bot Response - </br>![image](https://user-images.githubusercontent.com/45149585/
 On accepting - </br>![image](https://user-images.githubusercontent.com/45149585/166979380-ccc27663-e42c-4043-9ecb-d020668cffeb.png)</br>
 
 # Commands - 
+<img src="https://user-images.githubusercontent.com/45149585/166979654-fdf3ad39-5451-4805-afd0-d909d8bbbc4b.jpg" height="1132" width="243">
 
-![Screenshot_20220505-225949_Discord-Beta](https://user-images.githubusercontent.com/45149585/166979654-fdf3ad39-5451-4805-afd0-d909d8bbbc4b.jpg)

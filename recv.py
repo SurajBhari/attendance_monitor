@@ -3,6 +3,9 @@ from discord import Intents, File
 from json import load, dump
 from datetime import date, datetime, timedelta
 from show_data import get_data
+import sys
+sys.path.append('.')
+from mplcal.mplcal import MplCalendar
 
 
 config = load(open('schedule.json'))["config"]
@@ -12,7 +15,7 @@ intents = Intents.default()
 intents.members = True
 
 
-bot = commands.Bot(command_prefix = ">", intents=intents)
+bot = commands.Bot(command_prefix = ">", intents=intents, help_command=None)
 reactions = ["👍", "👎", "❌"]
 
 @bot.event

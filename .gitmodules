@@ -1,0 +1,3 @@
+[submodule "mplcal"]
+	path = mplcal
+	url = https://github.com/meta4/mplcal

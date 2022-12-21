@@ -1,6 +1,6 @@
 from json import load
 from datetime import date, datetime, timedelta
-from discord import Webhook, RequestsWebhookAdapter, Embed
+from discord import Webhook, SyncWebhook, Embed
 
 schedule = load(open('schedule.json'))
 
@@ -29,10 +29,10 @@ except KeyError:
     print("No class at this time")
     exit()
 
-webhook = Webhook.from_url(schedule["config"]["webhook_url"], adapter=RequestsWebhookAdapter())
+webhook = SyncWebhook.from_url(schedule["config"]["webhook_url"])
 
 embed = Embed(title=f"{current_class}", color=0x00ff00)
 embed.add_field(name=f"At {time_str}", value="?",inline=False)
-embed.add_field(name=f"On {curr_date.strftime('%A, %d/%m/%Y')}", value="?", inline=False)
+embed.add_field(name=f"On {curr_date.strftime('%A, %d/%m/%Y')}", inline=False)
 
 webhook.send(embed=embed)

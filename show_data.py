@@ -2,7 +2,7 @@ from calendar import month
 from json import load
 from datetime import datetime
 from operator import ne
-from mplcal import MplCalendar
+from mplcal.mplcal import MplCalendar
 from matplotlib import pyplot as plt
 
 

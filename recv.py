@@ -11,8 +11,7 @@ from mplcal.mplcal import MplCalendar
 config = load(open('schedule.json'))["config"]
 token = config["token"]
 
-intents = Intents.default()
-intents.members = True
+intents = Intents.all()
 
 
 bot = commands.Bot(command_prefix = ">", intents=intents, help_command=None)

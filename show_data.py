@@ -140,5 +140,6 @@ def get_data():
     string += "```"
     return string, file_names
 
-get_data()
+if __name__ == "__main__":
+    print(get_data())
 

@@ -2,12 +2,12 @@ from json import load
 from datetime import date, datetime, timedelta
 from discord import Webhook, SyncWebhook, Embed
 
-schedule = load(open('schedule.json'))
+schedule = load(open("schedule.json"))
 
 """
 # For testing purposes
 """
-curr_time = datetime(2022, 4, 28, 9, 0 , 0)
+curr_time = datetime(2022, 4, 28, 9, 0, 0)
 
 
 difference = timedelta(hours=5, minutes=30)
@@ -31,8 +31,8 @@ except KeyError:
 
 webhook = SyncWebhook.from_url(schedule["config"]["webhook_url"])
 
-embed = Embed(title=f"{current_class}", color=0x00ff00)
-embed.add_field(name=f"At {time_str}", value="?",inline=False)
+embed = Embed(title=f"{current_class}", color=0x00FF00)
+embed.add_field(name=f"At {time_str}", value="?", inline=False)
 embed.add_field(name=f"On {curr_date.strftime('%A, %d/%m/%Y')}", inline=False)
 
 webhook.send(embed=embed)
